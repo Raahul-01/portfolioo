@@ -33,7 +33,7 @@ export function Projects() {
   ]
 
   return (
-    <section className="mb-12 sm:mb-16">
+    <section id="projects" className="mb-12 sm:mb-16">
       <h2 className="text-base sm:text-lg font-medium mb-4 sm:mb-6 flex items-center gap-2">
         <span className="text-gray-500">{"{"}</span>
         <span className="break-words">Things I've Built</span>

@@ -7,7 +7,7 @@ export function Skills() {
   }
 
   return (
-    <section className="mb-16">
+    <section id="skills" className="mb-16">
       <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
         <span className="text-gray-500">{"{"}</span>
         Things I've Learnt & I Love

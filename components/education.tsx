@@ -2,7 +2,7 @@ import { GraduationCap } from "lucide-react"
 
 export function Education() {
   return (
-    <section className="mb-16">
+    <section id="education" className="mb-16">
       <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
         <span className="text-gray-500">{"{"}</span>
         Education

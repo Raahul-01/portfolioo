@@ -11,14 +11,14 @@ export function Footer() {
   ]
 
   return (
-    <footer className="mt-12 sm:mt-16 pt-8 sm:pt-10 border-t border-gray-800/50">
+    <footer className="mt-16 sm:mt-24 pt-12 sm:pt-16 border-t border-gray-800/50">
       {/* Main Footer Content */}
-      <div className="space-y-6 sm:space-y-8">
+      <div className="space-y-8 sm:space-y-12">
         
         {/* Quote Section */}
-        <div className="text-center space-y-2">
+        <div className="text-center space-y-3">
           <div className="inline-block">
-            <p className="text-base sm:text-lg md:text-xl font-light text-gray-300 italic leading-relaxed">
+            <p className="text-xl sm:text-2xl md:text-3xl font-light text-gray-300 italic leading-relaxed">
               "Nothing is Perfect — <br className="sm:hidden" />
               But You Can Make it <span className="text-white font-medium">Better</span>."
             </p>
@@ -27,7 +27,7 @@ export function Footer() {
         </div>
 
         {/* Social Links - Minimalist */}
-        <div className="flex justify-center items-center gap-5 sm:gap-6">
+        <div className="flex justify-center items-center gap-6 sm:gap-8">
           {socialLinks.map((social) => {
             const Icon = social.icon
             return (
@@ -39,8 +39,8 @@ export function Footer() {
                 className="group relative"
                 aria-label={social.label}
               >
-                <Icon className="w-5 h-5 text-gray-500 group-hover:text-white transition-all duration-300 group-hover:scale-110" />
-                <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-gray-500 group-hover:text-white transition-all duration-300 group-hover:scale-110" />
+                <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                   {social.label}
                 </span>
               </a>
@@ -49,7 +49,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6 pb-4 text-xs text-gray-500">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 pb-6 text-xs sm:text-sm text-gray-500">
           <div className="flex items-center gap-2">
             <span>© 2025</span>
             <span className="text-gray-700">•</span>

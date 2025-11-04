@@ -17,7 +17,7 @@ export function TechStack() {
   ]
 
   return (
-    <section className="mb-12 sm:mb-16">
+    <section id="tech" className="mb-12 sm:mb-16">
       <h2 className="text-base sm:text-lg font-medium mb-3 sm:mb-4 flex items-center gap-2">
         <span className="text-gray-500">{"{"}</span>
         <span className="break-words">Things I've Learnt & I Love</span>
