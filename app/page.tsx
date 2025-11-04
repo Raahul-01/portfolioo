@@ -7,6 +7,8 @@ import { Interests } from "@/components/interests"
 import { Elsewhere } from "@/components/elsewhere"
 import { SectionIndex } from "@/components/section-index"
 import { RightNav } from "@/components/right-nav"
+import { Achievements } from "@/components/achievements"
+import { Education } from "@/components/education"
 
 export default function Home() {
   return (
@@ -25,6 +27,8 @@ export default function Home() {
         <Interests />
         <TechStack />
         <Projects />
+        <Achievements />
+        <Education />
         <Elsewhere />
         <Footer />
       </div>

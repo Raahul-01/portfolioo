@@ -21,7 +21,7 @@ export function Skills() {
             {skills.languages.map((skill) => (
               <span
                 key={skill}
-                className="px-3 py-1.5 bg-gray-800 rounded-md text-sm border border-gray-700 hover:border-blue-500 transition-colors"
+                className="px-3 py-1.5 bg-gray-800 rounded-md text-sm transition-colors"
               >
                 {skill}
               </span>
@@ -35,7 +35,7 @@ export function Skills() {
             {skills.frameworks.map((skill) => (
               <span
                 key={skill}
-                className="px-3 py-1.5 bg-gray-800 rounded-md text-sm border border-gray-700 hover:border-blue-500 transition-colors"
+                className="px-3 py-1.5 bg-gray-800 rounded-md text-sm transition-colors"
               >
                 {skill}
               </span>
@@ -49,7 +49,7 @@ export function Skills() {
             {skills.tools.map((skill) => (
               <span
                 key={skill}
-                className="px-3 py-1.5 bg-gray-800 rounded-md text-sm border border-gray-700 hover:border-blue-500 transition-colors"
+                className="px-3 py-1.5 bg-gray-800 rounded-md text-sm transition-colors"
               >
                 {skill}
               </span>
@@ -63,7 +63,7 @@ export function Skills() {
             {skills.soft.map((skill) => (
               <span
                 key={skill}
-                className="px-3 py-1.5 bg-gray-800 rounded-md text-sm border border-gray-700 hover:border-blue-500 transition-colors"
+                className="px-3 py-1.5 bg-gray-800 rounded-md text-sm transition-colors"
               >
                 {skill}
               </span>

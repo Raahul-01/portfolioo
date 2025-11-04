@@ -11,7 +11,7 @@ export function Footer() {
   ]
 
   return (
-    <footer className="mt-16 sm:mt-24 pt-12 sm:pt-16 border-t border-gray-800/50">
+    <footer className="mt-16 sm:mt-24 pt-12 sm:pt-16">
       {/* Main Footer Content */}
       <div className="space-y-8 sm:space-y-12">
         

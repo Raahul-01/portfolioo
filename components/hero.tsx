@@ -34,7 +34,7 @@ export function Hero() {
         <div className="flex-1 min-w-0">
           <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-3">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">Rahul Kumar </h1>
-            <span className="px-3 py-1 bg-green-500/10 text-green-500 text-sm rounded-full border border-green-500/20 whitespace-nowrap flex items-center gap-2">
+            <span className="px-3 py-1 bg-green-500/10 text-green-500 text-sm rounded-full whitespace-nowrap flex items-center gap-2">
               <span className="w-2 h-2 bg-green-500 rounded-full"></span>
               Open to work
             </span>
@@ -63,7 +63,7 @@ export function Hero() {
           <img
             src="/profile.png"
             alt="Rahul Kumar Verma"
-            className="w-full h-full rounded-2xl object-cover border-4 border-gray-800"
+            className="w-full h-full rounded-2xl object-cover"
           />
         </div>
       </div>
@@ -113,7 +113,7 @@ export function Hero() {
           href="https://twitter.com/messages/compose?recipient_id=YOUR_TWITTER_ID"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-lg transition-colors text-sm"
+          className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors text-sm"
         >
           <MessageSquare className="w-4 h-4" />
           Twitter DM
@@ -121,7 +121,7 @@ export function Hero() {
         <span className="text-gray-600 flex items-center">OR</span>
         <a
           href="mailto:raahul.yxz@gmail.com"
-          className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-lg transition-colors text-sm"
+          className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors text-sm"
         >
           <Mail className="w-4 h-4" />
           Email Me

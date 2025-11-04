@@ -26,7 +26,7 @@ export function TechStack() {
 
       <div className="flex flex-wrap gap-2 mb-6 sm:mb-8">
         {technologies.map((tech) => (
-          <span key={tech.name} className={`px-2 sm:px-3 py-1 sm:py-1.5 text-xs font-medium rounded-md border ${tech.color} whitespace-nowrap`}>
+          <span key={tech.name} className={`px-2 sm:px-3 py-1 sm:py-1.5 text-xs font-medium rounded-md ${tech.color.replace(/\bborder[^\s]*/g, '')} whitespace-nowrap`}>
             {tech.name}
           </span>
         ))}
@@ -39,7 +39,7 @@ export function TechStack() {
           <span className="break-words">Where I've done my magic</span>
           <span className="text-gray-500">{"}"}</span>
         </h3>
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-3 sm:p-4">
+        <div className="bg-gray-900/50 rounded-lg p-3 sm:p-4">
           <div className="flex items-center gap-2 mb-2 sm:mb-3">
             <div className="w-8 h-8 bg-blue-500 rounded flex items-center justify-center text-xs font-bold flex-shrink-0">JG</div>
             <div>

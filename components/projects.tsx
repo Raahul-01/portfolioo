@@ -44,7 +44,7 @@ export function Projects() {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="bg-gray-900/30 border border-gray-800 rounded-lg overflow-hidden hover:border-gray-700 transition-colors"
+            className="bg-gray-900/30 rounded-lg overflow-hidden transition-colors"
           >
             <div className="flex flex-col md:flex-row">
               <div className="w-full md:w-1/3 bg-gray-900">
@@ -100,7 +100,7 @@ export function Projects() {
 
       <div className="space-y-4">
         {inProgress.map((project, index) => (
-          <div key={index} className="bg-gray-900/30 border border-gray-800 rounded-lg p-4 sm:p-5">
+          <div key={index} className="bg-gray-900/30 rounded-lg p-4 sm:p-5">
             <h3 className="text-base sm:text-lg font-semibold mb-2">{project.title}</h3>
             <p className="text-xs sm:text-sm text-gray-400 mb-3 leading-relaxed">{project.description}</p>
             <div className="flex flex-wrap gap-2">

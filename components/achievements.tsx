@@ -54,10 +54,10 @@ export function Achievements() {
             {achievements.map((achievement, index) => (
               <div
                 key={index}
-                className={`bg-gray-900 border rounded-lg p-5 ${
+                className={`bg-gray-900 rounded-lg p-5 ${
                   achievement.highlight
-                    ? "border-yellow-500/50 bg-yellow-500/5"
-                    : "border-gray-800 hover:border-blue-500"
+                    ? "bg-yellow-500/5"
+                    : ""
                 } transition-colors`}
               >
                 <div className="flex items-start gap-3">
@@ -68,7 +68,7 @@ export function Achievements() {
                   )}
                   <div className="flex-1">
                     <div className="flex items-start justify-between gap-4 mb-1">
-                      <h4 className="font-semibold text-white">{achievement.title}</h4>
+                      <h4 className="font-semibold text-gray-200">{achievement.title}</h4>
                       <span className="text-xs text-gray-500 whitespace-nowrap">{achievement.date}</span>
                     </div>
                     <p className="text-sm text-gray-400 mb-2">{achievement.org}</p>
@@ -86,11 +86,11 @@ export function Achievements() {
             {certificates.map((cert, index) => (
               <div
                 key={index}
-                className="bg-gray-900 border border-gray-800 rounded-lg p-4 hover:border-blue-500 transition-colors"
+                className="bg-gray-900 rounded-lg p-4 transition-colors"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <h4 className="font-medium text-white mb-1">{cert.name}</h4>
+                    <h4 className="font-medium text-gray-200 mb-1">{cert.name}</h4>
                     <p className="text-sm text-gray-400">{cert.org}</p>
                   </div>
                   <span className="text-xs text-gray-500 whitespace-nowrap">{cert.date}</span>
