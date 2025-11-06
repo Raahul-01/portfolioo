@@ -1,88 +1,99 @@
 import { ExternalLink, Github } from "lucide-react"
 import Image from "next/image"
+import { KeywordTooltip } from './keyword-tooltip'
 
 export function Projects() {
-  const projects = [
+  const experiments = [
     {
-      title: "SecureZPA",
+      title: "AI Thumbnail Maker — Automated Design System",
       description:
-        "An AI-powered cybersecurity platform that automates vulnerability detection and provides real-time threat intelligence using machine learning algorithms.",
-      tech: ["Next.js", "FastAPI", "TensorFlow", "PostgreSQL"],
-      image: "/cybersecurity-dashboard.png",
+        "An AI-powered platform that generates professional YouTube thumbnails and posters through intelligent segmentation, background removal, and modular design editing. Built with FastAPI, SAM, EfficientNet, and dynamic overlays — this system turns ideas into polished designs instantly.",
+      tech: ["FastAPI", "SAM", "EfficientNet", "OpenCV"],
+      image: "/news-platform.jpg",
       live: "#",
       github: "https://github.com/raahul-01",
     },
     {
-      title: "Omnisphere",
+      title: "Omnisphere — Automated AI News Engine",
       description:
-        "Architected an intelligent news ecosystem, leveraging AI to uncover emerging trends, aggregate real-time data, and craft compelling articles with Gemini AI.",
+        "A platform that detects trending topics, fetches real-time articles, and generates fresh, high-quality content using Gemini AI. Built with Next.js, FastAPI, Firebase, and News APIs.",
       tech: ["Next.js", "FastAPI", "Firebase", "Gemini AI"],
+      image: "/news-platform.jpg",
+      live: "#",
+      github: "https://github.com/raahul-01",
+    },
+    {
+      title: "Student Result Intelligence Dashboard",
+      description:
+        "Built using PySpark, Streamlit, Plotly, Matplotlib — this system processes massive datasets and transforms raw marks into beautiful performance insights, detailed statistics, and automated grading.",
+      tech: ["PySpark", "Streamlit", "Plotly", "Matplotlib"],
       image: "/news-platform.jpg",
       live: "#",
       github: "https://github.com/raahul-01",
     },
   ]
 
-  const inProgress = [
-    {
-      title: "AI Thumbnail Maker",
-      description:
-        "Spearheaded a visionary AI system that generates eye-catching, high-impact YouTube thumbnails and posters, transforming user prompts into artistic output.",
-      tech: ["Diffusers", "Transformers", "OpenCV", "FastAPI"],
-    },
-  ]
-
   return (
-    <section id="projects" className="mb-12 sm:mb-16">
-      <h2 className="text-base sm:text-lg font-medium mb-4 sm:mb-6 flex items-center gap-2">
-        <span className="text-gray-500">{"{"}</span>
-        <span className="break-words">Things I've Built</span>
-        <span className="text-gray-500">{"}"}</span>
-      </h2>
+    <section id="experiments" className="mb-12 sm:mb-16">
+      <div className="mb-4">
+        <h2 className="text-base sm:text-lg font-medium mb-1 text-gray-300">
+          Experiments
+        </h2>
+        <p className="text-xs text-gray-600 italic">
+          (NOT PROJECTS)
+        </p>
+        <p className="text-xs sm:text-sm text-gray-500 mt-2">
+          A showcase of things I've built, tried, tested, broken, and rebuilt.
+        </p>
+      </div>
 
-      <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-12">
-        {projects.map((project, index) => (
-          <div
-            key={index}
-            className="bg-gray-900/30 rounded-lg overflow-hidden transition-colors"
-          >
-            <div className="flex flex-col md:flex-row">
-              <div className="w-full md:w-1/3 bg-gray-900">
-                <Image
-                  src={project.image || "/placeholder.svg"}
-                  alt={project.title}
-                  width={300}
-                  height={200}
-                  className="w-full h-48 md:h-full object-cover"
-                />
-              </div>
-              <div className="flex-1 p-4 sm:p-5">
-                <h3 className="text-base sm:text-lg font-semibold mb-2">{project.title}</h3>
-                <p className="text-xs sm:text-sm text-gray-400 mb-3 leading-relaxed">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tech.map((t) => (
-                    <span key={t} className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded whitespace-nowrap">
+      <div className="space-y-4">
+        {experiments.map((experiment, index) => (
+          <div key={index} className="space-y-2">
+            <div className="flex items-start gap-3">
+              <span className="text-gray-600 text-xs mt-0.5 font-mono">{String(index + 1).padStart(2, '0')}</span>
+              <div className="flex-1">
+                <h3 className="text-sm sm:text-base font-semibold mb-1.5 text-gray-200">
+                  {index === 0 && (
+                    <>
+                      <KeywordTooltip info="An AI-powered platform that generates professional YouTube thumbnails and posters through intelligent segmentation, background removal, and modular design editing. Built with FastAPI, SAM, EfficientNet, and dynamic overlays.">AI Thumbnail Maker</KeywordTooltip> — Automated Design System
+                    </>
+                  )}
+                  {index === 1 && (
+                    <>
+                      <KeywordTooltip info="A platform that detects trending topics, fetches real-time articles, and generates fresh, high-quality content using Gemini AI. Built with Next.js, FastAPI, Firebase, and News APIs.">Omnisphere</KeywordTooltip> — Automated AI News Engine
+                    </>
+                  )}
+                  {index === 2 && (
+                    <>
+                      <KeywordTooltip info="A system that processes massive datasets using PySpark, Streamlit, Plotly, and Matplotlib. Transforms raw marks into beautiful performance insights, detailed statistics, and automated grading.">Student Result Intelligence Dashboard</KeywordTooltip>
+                    </>
+                  )}
+                </h3>
+                <p className="text-xs sm:text-sm text-gray-400 leading-relaxed mb-2">{experiment.description}</p>
+                <div className="flex flex-wrap gap-1.5 mb-2">
+                  {experiment.tech.map((t) => (
+                    <span key={t} className="text-xs text-gray-500">
                       {t}
                     </span>
                   ))}
                 </div>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-3 text-xs text-gray-500">
                   <a
-                    href={project.live}
+                    href={experiment.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-xs sm:text-sm text-blue-400 hover:underline"
+                    className="text-blue-400 hover:underline"
                   >
-                    <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
                     Live
                   </a>
+                  <span className="text-gray-600">•</span>
                   <a
-                    href={project.github}
+                    href={experiment.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-xs sm:text-sm text-blue-400 hover:underline"
+                    className="text-blue-400 hover:underline"
                   >
-                    <Github className="w-3 h-3 sm:w-4 sm:h-4" />
                     GitHub
                   </a>
                 </div>
@@ -90,39 +101,6 @@ export function Projects() {
             </div>
           </div>
         ))}
-      </div>
-
-      <h2 className="text-base sm:text-lg font-medium mb-4 sm:mb-6 flex items-center gap-2">
-        <span className="text-gray-500">{"{"}</span>
-        <span className="break-words">Projects in works</span>
-        <span className="text-gray-500">{"}"}</span>
-      </h2>
-
-      <div className="space-y-4">
-        {inProgress.map((project, index) => (
-          <div key={index} className="bg-gray-900/30 rounded-lg p-4 sm:p-5">
-            <h3 className="text-base sm:text-lg font-semibold mb-2">{project.title}</h3>
-            <p className="text-xs sm:text-sm text-gray-400 mb-3 leading-relaxed">{project.description}</p>
-            <div className="flex flex-wrap gap-2">
-              {project.tech.map((t) => (
-                <span key={t} className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded whitespace-nowrap">
-                  {t}
-                </span>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-6 sm:mt-8 text-center">
-        <a
-          href="https://github.com/raahul-01"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-xs sm:text-sm text-blue-400 hover:underline inline-flex items-center gap-1"
-        >
-          More Projects →
-        </a>
       </div>
     </section>
   )

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { Mail, MessageSquare } from 'lucide-react'
+import { KeywordTooltip } from './keyword-tooltip'
 
 export function Hero() {
   const [currentTime, setCurrentTime] = useState('')
@@ -24,7 +25,7 @@ export function Hero() {
   }, [])
 
   return (
-    <section className="mb-12 sm:mb-16">
+    <section id="my-story" className="mb-12 sm:mb-16">
       {/* Greeting */}
       <div className="text-gray-400 text-sm mb-4 flex items-center gap-2">
         Hey It's me <span className="text-lg">🚀</span>
@@ -47,7 +48,7 @@ export function Hero() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
-              Punjab, india
+              Bangalore, India
             </span>
             <span className="text-gray-600">|</span>
             <span className="flex items-center gap-1">
@@ -69,62 +70,45 @@ export function Hero() {
       </div>
 
       <div className="text-sm sm:text-base text-gray-300 leading-relaxed space-y-4 mb-6">
-        <p>
-          Yup! I'm a <span className="text-white font-semibold">Full Stack Developer</span>. Big deal, right? But wait... there's more! I'm not just any developer, I love building solutions and solving problems. I enjoy crafting websites with{" "}
-          <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-blue-500/10 text-blue-400 rounded text-xs sm:text-sm">
-            ⚛️ React
-          </span>
-          ,{" "}
-          <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-blue-600/10 text-blue-300 rounded text-xs sm:text-sm">
-            📘 TypeScript
-          </span>
-          ,{" "}
-          <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-gray-700/50 text-gray-200 rounded text-xs sm:text-sm">
-            ⚡ Express
-          </span>
-          ,{" "}
-          <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-green-600/10 text-green-400 rounded text-xs sm:text-sm">
-            🍃 Spring Boot
-          </span>
-          {" "}using{" "}
-          <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-green-500/10 text-green-400 rounded text-xs sm:text-sm">
-            🔥 MongoDB
-          </span>
-          ,{" "}
-          <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-blue-500/10 text-blue-400 rounded text-xs sm:text-sm">
-            🐬 MySQL
-          </span>
-          {" "}databases and I live on the{" "}
-          <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-gray-800 text-white rounded text-xs sm:text-sm">
-            ▶️ terminal
-          </span>
-          {" "}mostly.
+        <p className="text-sm sm:text-base">
+          I'm Rahul — a <KeywordTooltip info="A software developer who builds applications, systems, and solutions using programming languages and technologies.">developer</KeywordTooltip>, product thinker, and early-stage founder mindset creator. I design <KeywordTooltip info="Products and applications that leverage artificial intelligence and machine learning to provide intelligent, automated solutions.">AI-powered products</KeywordTooltip>, automation workflows, and scalable platforms that solve real-world problems with clarity and efficiency.
         </p>
         
-        <p>
-          I love both <span className="text-white font-semibold">Development</span> &{" "}
-          <span className="text-white font-semibold">Design</span>. So, that means I can create beautiful and functional websites. I'm always looking for new opportunities to learn and grow.
-        </p>
+        <div className="space-y-4 mt-6">
+          <div>
+            <h3 className="text-base font-semibold mb-2 text-gray-200">How I Started Building</h3>
+            <p className="text-sm sm:text-base">
+              I never began with the goal of collecting certificates or academic achievements. I began because I love <KeywordTooltip info="The process of identifying, analyzing, and finding effective solutions to complex challenges and obstacles.">solving problems</KeywordTooltip>. My curiosity for how systems work slowly turned into building things that make life easier — from <KeywordTooltip info="Tools and software that use artificial intelligence to assist in graphic design, image generation, and visual content creation.">AI design tools</KeywordTooltip> to automated news engines and large-scale analytics dashboards.
+            </p>
+          </div>
+          
+          <p className="text-sm sm:text-base">
+            I believe <KeywordTooltip info="The application of scientific knowledge for practical purposes, especially in industry and innovation.">technology</KeywordTooltip> should feel effortless. Fast. Useful. Human.
+          </p>
+          
+          <p className="text-sm sm:text-base">
+            Every project I build starts with one question:
+          </p>
+          
+          <p className="text-gray-200 font-medium italic text-sm sm:text-base">
+            "What <span className="underline decoration-gray-600 underline-offset-2">problem</span> is worth solving today?"
+          </p>
+        </div>
       </div>
 
       {/* CTA Buttons */}
       <div className="flex flex-wrap gap-3 mb-6">
         <a
-          href="https://twitter.com/messages/compose?recipient_id=YOUR_TWITTER_ID"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#experiments"
           className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors text-sm"
         >
-          <MessageSquare className="w-4 h-4" />
-          Twitter DM
+          Explore My Work →
         </a>
-        <span className="text-gray-600 flex items-center">OR</span>
         <a
-          href="mailto:raahul.yxz@gmail.com"
+          href="mailto:raahul.inbox@gmail.com"
           className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors text-sm"
         >
-          <Mail className="w-4 h-4" />
-          Email Me
+          Let's Build Something →
         </a>
       </div>
     </section>

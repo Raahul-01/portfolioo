@@ -1,14 +1,14 @@
 import { Hero } from "@/components/hero"
-import { TechStack } from "@/components/tech-stack"
+import { ProblemLibrary } from "@/components/problem-library"
 import { Projects } from "@/components/projects"
+import { FounderPlaybook } from "@/components/founder-playbook"
+import { IdeaGallery } from "@/components/idea-gallery"
+import { Timeline } from "@/components/timeline"
+import { LearningShelf } from "@/components/learning-shelf"
+import { Elsewhere } from "@/components/elsewhere"
 import { Footer } from "@/components/footer"
 import { DecorativeSlash } from "@/components/decorative-slash"
-import { Interests } from "@/components/interests"
-import { Elsewhere } from "@/components/elsewhere"
-import { SectionIndex } from "@/components/section-index"
 import { RightNav } from "@/components/right-nav"
-import { Achievements } from "@/components/achievements"
-import { Education } from "@/components/education"
 
 export default function Home() {
   return (
@@ -23,12 +23,12 @@ export default function Home() {
 
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 relative z-10 md:-translate-x-12 lg:-translate-x-24">
         <Hero />
-        <SectionIndex />
-        <Interests />
-        <TechStack />
+        <ProblemLibrary />
         <Projects />
-        <Achievements />
-        <Education />
+        <FounderPlaybook />
+        <IdeaGallery />
+        <Timeline />
+        <LearningShelf />
         <Elsewhere />
         <Footer />
       </div>

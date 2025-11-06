@@ -7,16 +7,16 @@ export function Footer() {
     { icon: Github, href: "https://github.com/raahul-01", label: "GitHub" },
     { icon: Linkedin, href: "https://linkedin.com/in/raahul01", label: "LinkedIn" },
     { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-    { icon: Mail, href: "mailto:raahul.yxz@gmail.com", label: "Email" },
+    { icon: Mail, href: "mailto:raahul.inbox@gmail.com", label: "Email" },
   ]
 
   return (
-    <footer className="mt-16 sm:mt-24 pt-12 sm:pt-16">
+    <footer className="mt-12 sm:mt-16 pt-8 sm:pt-10">
       {/* Main Footer Content */}
-      <div className="space-y-8 sm:space-y-12">
+      <div className="space-y-6 sm:space-y-8">
         
         {/* Quote Section */}
-        <div className="text-center space-y-3">
+        <div className="text-center space-y-2">
           <div className="inline-block">
             <p className="text-xl sm:text-2xl md:text-3xl font-light text-gray-300 italic leading-relaxed">
               "Nothing is Perfect — <br className="sm:hidden" />
@@ -49,7 +49,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 pb-6 text-xs sm:text-sm text-gray-500">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 pb-4 text-xs sm:text-sm text-gray-500">
           <div className="flex items-center gap-2">
             <span>© 2025</span>
             <span className="text-gray-700">•</span>
@@ -59,8 +59,6 @@ export function Footer() {
           <div className="flex items-center gap-2">
             <span className="text-gray-600">Crafted with</span>
             <span className="text-red-500 animate-pulse">❤️</span>
-            <span className="text-gray-600">&</span>
-            <span className="text-blue-400">Next.js</span>
           </div>
 
           <a 

@@ -7,13 +7,14 @@ type SectionItem = { id: string; label: string }
 export function RightNav() {
   const items: SectionItem[] = useMemo(
     () => [
-      { id: 'interests', label: 'Interests' },
-      { id: 'tech', label: 'Tech' },
-      { id: 'projects', label: 'Projects' },
-      { id: 'achievements', label: 'Achievements' },
-      { id: 'skills', label: 'Skills' },
-      { id: 'education', label: 'Education' },
-      { id: 'elsewhere', label: 'Elsewhere' },
+      { id: 'my-story', label: 'My Story' },
+      { id: 'problem-library', label: 'Problem Library' },
+      { id: 'experiments', label: 'Experiments' },
+      { id: 'founder-playbook', label: 'Founder Playbook' },
+      { id: 'idea-gallery', label: 'Idea Gallery' },
+      { id: 'timeline', label: 'Timeline' },
+      { id: 'learning-shelf', label: 'Learning Shelf' },
+      { id: 'elsewhere', label: 'Contact' },
     ],
     []
   )
