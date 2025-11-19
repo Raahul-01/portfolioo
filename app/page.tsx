@@ -1,6 +1,5 @@
 import { Hero } from "@/components/hero"
 import { ProblemLibrary } from "@/components/problem-library"
-import { Projects } from "@/components/projects"
 import { FounderPlaybook } from "@/components/founder-playbook"
 import { IdeaGallery } from "@/components/idea-gallery"
 import { Timeline } from "@/components/timeline"
@@ -24,7 +23,6 @@ export default function Home() {
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 relative z-10 md:-translate-x-12 lg:-translate-x-24">
         <Hero />
         <ProblemLibrary />
-        <Projects />
         <FounderPlaybook />
         <IdeaGallery />
         <Timeline />
