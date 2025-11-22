@@ -14,7 +14,7 @@ export function RightNav() {
       { id: 'idea-gallery', label: 'Idea Gallery' },
       { id: 'timeline', label: 'Timeline' },
       { id: 'learning-shelf', label: 'Learning Shelf' },
-      { id: 'elsewhere', label: 'Contact' },
+      { id: 'contact', label: 'Contact' },
     ],
     []
   )

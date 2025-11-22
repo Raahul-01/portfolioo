@@ -11,7 +11,7 @@ const experiments = [
       'An AI-powered platform that generates professional YouTube thumbnails and posters through intelligent segmentation, background removal, and modular design editing.',
     summary:
       '— an automated design system that segments with SAM + EfficientNet and exports ready-to-use thumbnails.',
-    stack: ['FastAPI', 'SAM', 'EfficientNet', 'OpenCV'],
+    stack: [],
     detail:
       'Creators still open heavyweight design tools for every thumbnail. There’s no fast, opinionated system for segmenting subjects and rebuilding layouts, so publishing slows down.',
     live: '#',
@@ -24,7 +24,7 @@ const experiments = [
     tooltip:
       'A distributed data processing framework built on Apache Spark, used for analyzing large-scale datasets with high performance.',
     summary: 'to analyze 10k+ results and surface signal for mentors.',
-    stack: ['PySpark', 'Streamlit', 'Plotly', 'Matplotlib'],
+    stack: [],
     detail:
       'A single scoreboard doesn’t tell students or mentors where performance drops. No cohort views, no topic-level breakdown, so feedback is blind.',
     live: '#',
@@ -38,7 +38,7 @@ const experiments = [
       'An automated news and article generation system that detects trending topics, fetches real-time articles, and generates fresh content using AI.',
     summary:
       '— an automated news engine that listens to live feeds and publishes high-signal briefs with Gemini AI.',
-    stack: ['Next.js', 'FastAPI', 'Firebase', 'Gemini AI'],
+    stack: [],
     detail:
       'News feeds are noise-heavy, duplicates everywhere, and human editors can’t keep up with emerging spikes in real time.',
     live: '#',
@@ -51,7 +51,7 @@ const experiments = [
     tooltip:
       'Software tools and systems that automate repetitive manual tasks, reducing human effort and increasing business efficiency.',
     summary: 'to kill repetitive tasks and keep teams shipping.',
-    stack: ['Node.js', 'Python', 'Supabase', 'Zapier'],
+    stack: [],
     detail:
       'Internal ops teams still copy data between tools and chase status updates manually—huge time sink and very error prone.',
     live: '#',

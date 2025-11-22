@@ -4,7 +4,6 @@ import { FounderPlaybook } from "@/components/founder-playbook"
 import { IdeaGallery } from "@/components/idea-gallery"
 import { Timeline } from "@/components/timeline"
 import { LearningShelf } from "@/components/learning-shelf"
-import { Elsewhere } from "@/components/elsewhere"
 import { Footer } from "@/components/footer"
 import { DecorativeSlash } from "@/components/decorative-slash"
 import { RightNav } from "@/components/right-nav"
@@ -27,7 +26,6 @@ export default function Home() {
         <IdeaGallery />
         <Timeline />
         <LearningShelf />
-        <Elsewhere />
         <Footer />
       </div>
     </main>
