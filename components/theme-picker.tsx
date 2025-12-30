@@ -11,7 +11,7 @@ export function ThemePicker() {
 
   useEffect(() => {
     setMounted(true)
-    const hasSeenPicker = localStorage.getItem("theme-picker-seen")
+    const hasSeenPicker = sessionStorage.getItem("theme-picker-seen")
     if (!hasSeenPicker) {
       setIsOpen(true)
     }
@@ -19,7 +19,7 @@ export function ThemePicker() {
 
   const handleSelect = (theme: "light" | "dark") => {
     setTheme(theme)
-    localStorage.setItem("theme-picker-seen", "true")
+    sessionStorage.setItem("theme-picker-seen", "true")
     setIsOpen(false)
   }
 

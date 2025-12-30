@@ -9,7 +9,7 @@ import { RightNav } from "@/components/right-nav"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white relative overflow-hidden">
+    <main className="min-h-screen relative overflow-hidden">
       <RightNav />
       {/* Decorative slashes */}
       <DecorativeSlash className="top-[10%] left-[5%] hidden sm:block" />

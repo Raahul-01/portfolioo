@@ -61,21 +61,23 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 pb-4 text-xs sm:text-sm text-gray-500">
-          <div className="flex items-center gap-2">
-            <span>© 2025</span>
-            <span className="text-gray-700">•</span>
-            <span className="text-gray-400">Rahul Kumar Verma</span>
-          </div>
-          
-          <div className="flex items-center gap-2">
-            <span className="text-gray-600">Crafted with</span>
-            <span className="text-red-500 animate-pulse">❤️</span>
+        <div className="flex flex-col items-center gap-4 pt-6 pb-4 text-xs sm:text-sm text-gray-500 dark:text-gray-500 border-t border-gray-200 dark:border-gray-800">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6">
+            <div className="flex items-center gap-2">
+              <span>© 2025</span>
+              <span className="text-gray-300 dark:text-gray-700 hidden sm:inline">•</span>
+              <span className="text-gray-900 dark:text-gray-400 font-medium sm:font-normal">Rahul Kumar Verma</span>
+            </div>
+            
+            <div className="flex items-center gap-2">
+              <span className="text-gray-500 dark:text-gray-600">Crafted with</span>
+              <span className="text-red-500 animate-pulse">❤️</span>
+            </div>
           </div>
 
           <a 
             href="#" 
-            className="group flex items-center gap-1 text-gray-400 hover:text-white transition-colors"
+            className="group flex items-center gap-1 text-gray-400 hover:text-black dark:hover:text-white transition-colors"
             onClick={(e) => {
               e.preventDefault()
               window.scrollTo({ top: 0, behavior: 'smooth' })
