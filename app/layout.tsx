@@ -21,19 +21,30 @@ export const viewport: Viewport = {
   maximumScale: 5,
 }
 
+import { ThemeProvider } from "@/components/theme-provider"
+import { ThemePicker } from "@/components/theme-picker"
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
-        <div className="bg-noise" />
-        <InteractiveGrid />
-        <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
-        <CommandMenu />
-        <Analytics />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="bg-noise" />
+          <InteractiveGrid />
+          <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+          <CommandMenu />
+          <ThemePicker />
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   )

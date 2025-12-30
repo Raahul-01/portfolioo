@@ -44,50 +44,46 @@ export function ProblemLibrary() {
   return (
     <section id="problem-library" className="mb-12 sm:mb-16">
       <div className="mb-6 space-y-1">
-        <h2 className="text-lg sm:text-xl font-normal text-gray-200">
+        <h2 className="text-lg sm:text-xl font-normal text-gray-900 dark:text-gray-200">
           <TextScramble text="Architectural Case Studies" />
         </h2>
-        <p className="text-xs sm:text-sm text-gray-500">
+        <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-500">
           Engineering clarity out of chaos. 
         </p>
       </div>
 
-      <div className="space-y-4 border-t border-gray-800 pt-6">
+      <div className="space-y-4 border-t border-gray-200 dark:border-gray-800 pt-6">
         <div>
-          <p className="text-sm uppercase tracking-[0.2em] text-gray-500">Selected Works</p>
+          <p className="text-sm uppercase tracking-[0.2em] text-gray-500 dark:text-gray-500">Selected Works</p>
         </div>
 
         <div className="space-y-6">
           {experiments.map((experiment, index) => (
-            <SpotlightCard
-              key={experiment.title}
-              className="p-4 -mx-4 sm:mx-0"
-              spotlightColor="rgba(255, 255, 255, 0.03)"
-            >
+            <div key={experiment.title} className="group py-6 border-b border-gray-200 dark:border-gray-800/50 last:border-0">
               <div className="text-sm sm:text-base leading-relaxed space-y-3">
                 <div className="flex items-start justify-between gap-3 flex-wrap">
                   <div>
-                    <p className="text-gray-400 text-xs mb-1">#{String(index + 1).padStart(2, '0')}</p>
-                    <p className="text-gray-200 font-medium">{experiment.title}</p>
+                    <p className="text-gray-400 dark:text-gray-500 text-xs mb-1 font-mono">0{index + 1}</p>
+                    <p className="text-gray-900 dark:text-gray-200 font-medium group-hover:text-black dark:group-hover:text-white transition-colors">{experiment.title}</p>
                   </div>
-                  <div className="flex gap-3 text-xs text-gray-500">
+                  <div className="flex gap-3 text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">
                     <a
                       href={experiment.live}
-                      className="inline-flex items-center gap-1 hover:text-blue-400 transition-colors"
+                      className="inline-flex items-center gap-1 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                     >
                       <ExternalLink className="w-3 h-3" />
                       Live
                     </a>
                     <a
                       href={experiment.github}
-                      className="inline-flex items-center gap-1 hover:text-blue-400 transition-colors"
+                      className="inline-flex items-center gap-1 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                     >
                       <Github className="w-3 h-3" />
                       GitHub
                     </a>
                   </div>
                 </div>
-                <p className="text-gray-400 text-xs sm:text-sm">
+                <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">
                   {experiment.intro}{' '}
                   <KeywordTooltip info={experiment.tooltip}>{experiment.label}</KeywordTooltip>{' '}
                   {experiment.summary}
@@ -97,13 +93,13 @@ export function ProblemLibrary() {
                 </p>
                 <div className="flex flex-wrap gap-2 text-xs text-gray-500">
                   {experiment.stack.map((tech) => (
-                    <span key={tech} className="rounded-full border border-gray-800 px-2 py-0.5">
+                    <span key={tech} className="text-[10px] uppercase tracking-wider text-gray-500 dark:text-gray-600">
                       {tech}
                     </span>
                   ))}
                 </div>
               </div>
-            </SpotlightCard>
+            </div>
           ))}
         </div>
       </div>

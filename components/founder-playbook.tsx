@@ -23,19 +23,19 @@ export function FounderPlaybook() {
   return (
     <section id="founder-playbook" className="mb-12 sm:mb-16">
       <div className="mb-6">
-        <span className="text-gray-600 text-xs font-mono">{"// The Operating System"}</span>
-        <h2 className="text-lg sm:text-xl font-normal text-gray-200 mt-1">
+        <span className="text-gray-500 dark:text-gray-600 text-xs font-mono">{"// The Operating System"}</span>
+        <h2 className="text-lg sm:text-xl font-normal text-gray-900 dark:text-gray-200 mt-1">
           Mental Models.
         </h2>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {models.map((model, index) => (
-          <div key={index} className="p-4 bg-white/5 border border-white/5 rounded-lg hover:border-white/10 transition-colors">
-            <h3 className="text-sm font-medium text-gray-200 mb-2 font-mono">
+          <div key={index} className="p-4 bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5 rounded-lg hover:border-black/10 dark:hover:border-white/10 transition-colors">
+            <h3 className="text-sm font-medium text-gray-800 dark:text-gray-200 mb-2 font-mono">
               0{index + 1}. {model.title}
             </h3>
-            <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
+            <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
               {model.desc}
             </p>
           </div>
