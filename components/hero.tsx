@@ -66,20 +66,20 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed space-y-6 mb-8">
+      <div className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed space-y-6 mb-8">
         <p>
           I don't just write code; I engineer <span className="text-black dark:text-white font-medium">clarity</span> out of chaos. 
           Most developers build features. I build <KeywordTooltip info="Self-sustaining software architectures that require minimal maintenance and scale efficiently.">systems</KeywordTooltip> that allow others to move faster.
         </p>
         
-        <div className="pl-4 border-l-2 border-gray-200 dark:border-gray-800 space-y-4">
-          <p className="italic text-gray-500 dark:text-gray-400">
+        <div className="pl-4 border-l-2 border-gray-300 dark:border-gray-800 space-y-4">
+          <p className="italic text-gray-600 dark:text-gray-400">
             "The code is not the asset. The <span className="text-gray-900 dark:text-gray-200 not-italic font-medium">insight</span> behind the code is the asset."
           </p>
         </div>
 
         <p>
-          My work creates leverage. Whether it's optimizing a <KeywordTooltip info="Distributed data processing engine handling terabytes of data.">PySpark pipeline</KeywordTooltip> to process 10k+ records in seconds, or designing an <KeywordTooltip info="A minimalist, high-performance UI framework focused on user intent.">AI interface</KeywordTooltip> that feels like magic—I am obsessed with the <span className="underline decoration-gray-300 dark:decoration-gray-700 underline-offset-4 decoration-1">0.1% details</span> that majority ignore.
+          My work creates leverage. Whether it's optimizing a <KeywordTooltip info="Distributed data processing engine handling terabytes of data.">PySpark pipeline</KeywordTooltip> to process 10k+ records in seconds, or designing an <KeywordTooltip info="A minimalist, high-performance UI framework focused on user intent.">AI interface</KeywordTooltip> that feels like magic—I am obsessed with the <span className="underline decoration-gray-400 dark:decoration-gray-700 underline-offset-4 decoration-1">0.1% details</span> that majority ignore.
         </p>
       </div>
 

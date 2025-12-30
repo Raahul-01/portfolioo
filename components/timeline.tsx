@@ -19,7 +19,7 @@ export function Timeline() {
         <h2 className="text-base sm:text-lg font-medium text-gray-900 dark:text-gray-200 mb-1">
           <TextScramble text="Journey & Roadmap" />
         </h2>
-        <div className="h-px w-12 bg-gray-200 dark:bg-gray-700 mt-2"></div>
+        <div className="h-px w-12 bg-gray-300 dark:bg-gray-700 mt-2"></div>
       </div>
 
       <div className="space-y-2.5">

@@ -59,11 +59,11 @@ export function ProblemLibrary() {
 
         <div className="space-y-6">
           {experiments.map((experiment, index) => (
-            <div key={experiment.title} className="group py-6 border-b border-gray-200 dark:border-gray-800/50 last:border-0">
+            <div key={experiment.title} className="group py-6 border-b border-gray-300 dark:border-gray-800/50 last:border-0">
               <div className="text-sm sm:text-base leading-relaxed space-y-3">
                 <div className="flex items-start justify-between gap-3 flex-wrap">
                   <div>
-                    <p className="text-gray-400 dark:text-gray-500 text-xs mb-1 font-mono">0{index + 1}</p>
+                    <p className="text-gray-500 dark:text-gray-500 text-xs mb-1 font-mono">0{index + 1}</p>
                     <p className="text-gray-900 dark:text-gray-200 font-medium group-hover:text-black dark:group-hover:text-white transition-colors">{experiment.title}</p>
                   </div>
                   <div className="flex gap-3 text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">
