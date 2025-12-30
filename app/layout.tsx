@@ -5,6 +5,8 @@ import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import "./globals.css"
+import { InteractiveGrid } from "@/components/ui/interactive-grid"
+import { CommandMenu } from "@/components/command-menu"
 
 export const metadata: Metadata = {
   title: "Rahul Kumar  - Full Stack Developer",
@@ -27,7 +29,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
+        <div className="bg-noise" />
+        <InteractiveGrid />
         <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+        <CommandMenu />
         <Analytics />
       </body>
     </html>

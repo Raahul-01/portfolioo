@@ -1,7 +1,6 @@
 import { Hero } from "@/components/hero"
 import { ProblemLibrary } from "@/components/problem-library"
 import { FounderPlaybook } from "@/components/founder-playbook"
-import { IdeaGallery } from "@/components/idea-gallery"
 import { Timeline } from "@/components/timeline"
 import { LearningShelf } from "@/components/learning-shelf"
 import { Footer } from "@/components/footer"
@@ -23,7 +22,6 @@ export default function Home() {
         <Hero />
         <ProblemLibrary />
         <FounderPlaybook />
-        <IdeaGallery />
         <Timeline />
         <LearningShelf />
         <Footer />

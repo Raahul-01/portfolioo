@@ -1,6 +1,7 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState, useRef } from 'react'
+import { cn } from '@/lib/utils' // Assuming you have a utils file, otherwise I'll mock it or use template literal
 
 type SectionItem = { id: string; label: string }
 
@@ -9,10 +10,8 @@ export function RightNav() {
     () => [
       { id: 'my-story', label: 'My Story' },
       { id: 'problem-library', label: 'Problem Library' },
-      { id: 'experiments', label: 'Experiments' },
       { id: 'founder-playbook', label: 'Founder Playbook' },
-      { id: 'idea-gallery', label: 'Idea Gallery' },
-      { id: 'timeline', label: 'Timeline' },
+      { id: 'timeline', label: 'Roadmap' },
       { id: 'learning-shelf', label: 'Learning Shelf' },
       { id: 'contact', label: 'Contact' },
     ],
@@ -20,41 +19,59 @@ export function RightNav() {
   )
 
   const [activeId, setActiveId] = useState<string>('')
-  const [showMobileHint, setShowMobileHint] = useState<boolean>(false)
+  const [indicatorTop, setIndicatorTop] = useState<number>(0)
+  
+  // Ref to track the nav list to calculate indicator position locally
+  const listRef = useRef<HTMLUListElement>(null)
 
   useEffect(() => {
-    const sectionElements = items
-      .map((i) => document.getElementById(i.id))
-      .filter(Boolean) as HTMLElement[]
-
-    if (sectionElements.length === 0) return
-
+    // 1. Optimized Observer: Only intersect relative to viewport center
     const observer = new IntersectionObserver(
       (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => (a.boundingClientRect.top > b.boundingClientRect.top ? 1 : -1))
+        // Find which section is most visible
+        const visibleSections = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio) // Sort by most visible
 
-        if (visible[0]) setActiveId(visible[0].target.id)
+        if (visibleSections.length > 0) {
+          const targetId = visibleSections[0].target.id
+          setActiveId(targetId)
+        }
       },
       {
-        root: null,
-        rootMargin: '0px 0px -60% 0px',
-        threshold: [0, 0.2, 0.4, 0.6, 0.8, 1],
+        rootMargin: '-40% 0px -40% 0px', // Active only when in middle 20% of screen
+        threshold: [0, 0.2, 0.5],
       }
     )
 
-    sectionElements.forEach((el) => observer.observe(el))
+    items.forEach((item) => {
+      const el = document.getElementById(item.id)
+      if (el) observer.observe(el)
+    })
+
     return () => observer.disconnect()
   }, [items])
 
-  // Show a temporary mobile hint with the current section label on change
+  // 2. Update Indicator Position when activeId changes
   useEffect(() => {
-    if (!activeId) return
-    setShowMobileHint(true)
-    const t = setTimeout(() => setShowMobileHint(false), 1000)
-    return () => clearTimeout(t)
-  }, [activeId])
+    if (!listRef.current || !activeId) return
+
+    const activeIndex = items.findIndex(item => item.id === activeId)
+    if (activeIndex === -1) return
+
+    // Rough calculation: item height + gap. 
+    // Assuming each li is ~24px height + 8px gap = 32px step. 
+    // Ideally we measure the DOM node but a constrained calculation is faster/optimized.
+    const ITEM_HEIGHT = 28 // Approximate height of text item
+    const ITEM_GAP = 8 
+    
+    // Better: Get actual DOM element position relative to UL
+    const activeItemEl = listRef.current.children[activeIndex] as HTMLElement
+    if (activeItemEl) {
+      setIndicatorTop(activeItemEl.offsetTop + (activeItemEl.offsetHeight / 2))
+    }
+    
+  }, [activeId, items])
 
   const handleClick = (id: string) => (e: React.MouseEvent) => {
     e.preventDefault()
@@ -65,41 +82,44 @@ export function RightNav() {
   }
 
   return (
-    <>
-      {/* Desktop right nav */}
-      <aside className="hidden md:block fixed right-32 lg:right-40 top-1/2 -translate-y-1/2 z-20">
-        <nav aria-label="On this page" className="h-full">
-          <ul className="flex flex-col gap-2 text-xs sm:text-sm text-gray-400">
-            {items.map((item) => {
-              const isActive = activeId === item.id
-              return (
-                <li key={item.id}>
-                  <a
-                    href={`#${item.id}`}
-                    onClick={handleClick(item.id)}
-                    className={
-                      isActive
-                        ? 'text-white font-medium'
-                        : 'hover:text-white hover:underline'
-                    }
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              )
-            })}
-          </ul>
-        </nav>
-      </aside>
+    <aside className="hidden md:block fixed right-12 lg:right-20 top-1/2 -translate-y-1/2 z-20">
+      <nav aria-label="On this page" className="relative pr-4">
+        {/* The Sliding Indicator Track */}
+        <div className="absolute right-0 top-0 bottom-0 w-px bg-gray-800" />
+        
+        {/* The Active Pill */}
+        <div 
+          className="absolute right-[-1px] w-0.5 h-6 bg-white shadow-[0_0_10px_2px_rgba(255,255,255,0.3)] transition-all duration-500 ease-out rounded-full"
+          style={{ 
+            top: indicatorTop,
+            transform: 'translateY(-50%)',
+            opacity: activeId ? 1 : 0
+          }}
+        />
 
-      {/* Mobile section change hint (right side) */}
-      <div className={`md:hidden fixed top-20 right-4 z-20 transition-all duration-300 ${showMobileHint ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-2'}`} aria-live="polite" aria-atomic="true">
-        <span className="px-3 py-1.5 rounded-full text-xs bg-gray-800/80 text-gray-200 shadow-sm">
-          {items.find((i) => i.id === activeId)?.label || ''}
-        </span>
-      </div>
-    </>
+        <ul ref={listRef} className="flex flex-col gap-3 text-xs sm:text-sm text-right">
+          {items.map((item) => {
+            const isActive = activeId === item.id
+            return (
+              <li key={item.id} className="relative group">
+                <a
+                  href={`#${item.id}`}
+                  onClick={handleClick(item.id)}
+                  className={`
+                    block transition-all duration-300 ease-out px-4 py-1
+                    ${isActive 
+                      ? 'text-white translate-x-0 scale-105 font-medium' 
+                      : 'text-gray-500 hover:text-gray-300 hover:translate-x-1'
+                    }
+                  `}
+                >
+                  {item.label}
+                </a>
+              </li>
+            )
+          })}
+        </ul>
+      </nav>
+    </aside>
   )
 }
-
-

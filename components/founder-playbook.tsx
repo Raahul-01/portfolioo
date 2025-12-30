@@ -1,58 +1,46 @@
 import { KeywordTooltip } from './keyword-tooltip'
 
 export function FounderPlaybook() {
-  const principles = [
-    "Build fast → Learn fast → Improve with user feedback.",
-    "Design for humans, not for systems.",
-    "AI should automate the boring, so people can do the meaningful.",
-    "Good products remove friction — great products remove thinking.",
-    "Ship ideas. Don't wait for perfection.",
+  const models = [
+    {
+      title: "Speed is a feature",
+      desc: "If you're not embarrassed by v1, you shipped too late. Momentum solves more problems than deliberation."
+    },
+    {
+      title: "Complexity is a tax",
+      desc: "Every line of code you write is a liability. The best engineer deletes code. I optimize for subtraction."
+    },
+    {
+      title: "User psychology > Tech stack",
+      desc: "Nobody cares if it's written in Rust. They care if it solves their pain in < 3 seconds."
+    },
+    {
+      title: "Distribution first",
+      desc: "Building is easy. Getting people to care is hard. Bake distribution into the product DNA."
+    },
   ]
 
   return (
     <section id="founder-playbook" className="mb-12 sm:mb-16">
-      <div className="mb-4">
-        <span className="text-gray-500 text-xs">{"{"}</span>
-        <h2 className="text-base sm:text-lg font-medium inline mx-2 text-gray-200">
-          The Founder Playbook
+      <div className="mb-6">
+        <span className="text-gray-600 text-xs font-mono">{"// The Operating System"}</span>
+        <h2 className="text-lg sm:text-xl font-normal text-gray-200 mt-1">
+          Mental Models.
         </h2>
-        <span className="text-gray-500 text-xs">{"}"}</span>
-        <p className="text-xs sm:text-sm text-gray-500 mt-2">
-          My principles for building useful products.
-        </p>
       </div>
 
-      <ul className="space-y-3">
-        {principles.map((principle, index) => (
-          <li key={index} className="text-sm sm:text-base text-gray-300">
-            {index === 0 && (
-              <>
-                <KeywordTooltip info="Rapid development and iteration approach that prioritizes speed over perfection, allowing quick learning from real-world usage.">Build fast</KeywordTooltip> → <KeywordTooltip info="The process of gathering insights and understanding from user interactions, feedback, and data to improve products.">Learn fast</KeywordTooltip> → Improve with user feedback.
-              </>
-            )}
-            {index === 1 && (
-              <>
-                Design for <KeywordTooltip info="People who will actually use the product, focusing on their needs, behaviors, and experiences rather than technical constraints.">humans</KeywordTooltip>, not for systems.
-              </>
-            )}
-            {index === 2 && (
-              <>
-                <KeywordTooltip info="Artificial Intelligence - technology that enables machines to perform tasks that typically require human intelligence.">AI</KeywordTooltip> should automate the boring, so people can do the meaningful.
-              </>
-            )}
-            {index === 3 && (
-              <>
-                <KeywordTooltip info="Well-designed products that effectively solve user problems and provide value.">Good products</KeywordTooltip> remove <KeywordTooltip info="Obstacles, delays, or complications that prevent users from easily achieving their goals.">friction</KeywordTooltip> — great products remove thinking.
-              </>
-            )}
-            {index === 4 && (
-              <>
-                <KeywordTooltip info="The practice of releasing products, features, or concepts quickly rather than waiting for them to be perfect.">Ship ideas</KeywordTooltip>. Don't wait for <KeywordTooltip info="The state of being flawless or complete, which often delays product launches unnecessarily.">perfection</KeywordTooltip>.
-              </>
-            )}
-          </li>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {models.map((model, index) => (
+          <div key={index} className="p-4 bg-white/5 border border-white/5 rounded-lg hover:border-white/10 transition-colors">
+            <h3 className="text-sm font-medium text-gray-200 mb-2 font-mono">
+              0{index + 1}. {model.title}
+            </h3>
+            <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
+              {model.desc}
+            </p>
+          </div>
         ))}
-      </ul>
+      </div>
     </section>
   )
 }

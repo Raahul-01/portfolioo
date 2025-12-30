@@ -2,21 +2,21 @@ import { KeywordTooltip } from './keyword-tooltip'
 
 export function LearningShelf() {
   const items = [
-    "Zero to One — Peter Thiel",
-    "The Lean Startup — Eric Ries",
-    "Think Fast, Think Slow — Daniel Kahneman",
-    "AI & Machine Learning Fundamentals — NPTEL",
-    "Data Science & ML Programs — LinkedIn Learning",
+    "Designing Data-Intensive Applications — Martin Kleppmann",
+    "Neural Networks (Zero to Hero) — Andrej Karpathy",
+    "Systems Design Primer — Donne Martin",
+    "The bitter lesson — Rich Sutton",
+    "Just Ship It — Pieter Levels",
   ]
 
   return (
     <section id="learning-shelf" className="mb-12 sm:mb-16">
       <div className="mb-4">
         <h2 className="text-sm font-normal text-gray-500 uppercase tracking-wider mb-2">
-          Learning Shelf
+          The Input Stack
         </h2>
         <p className="text-xs text-gray-600">
-          Books, courses, and people who shaped my thinking:
+          Consumption determines output. My diet:
         </p>
       </div>
 

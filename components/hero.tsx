@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { Mail, MessageSquare } from 'lucide-react'
 import { KeywordTooltip } from './keyword-tooltip'
+import { TextScramble } from './ui/text-scramble'
 
 export function Hero() {
   const [currentTime, setCurrentTime] = useState('')
@@ -28,87 +29,74 @@ export function Hero() {
     <section id="my-story" className="mb-12 sm:mb-16">
       {/* Greeting */}
       <div className="text-gray-400 text-sm mb-4 flex items-center gap-2">
-        Hey It's me <span className="text-lg">🚀</span>
+        <span className="text-lg">⚡</span> Engineer. Builder. Obsessive.
       </div>
 
       <div className="flex flex-row items-start justify-between gap-4 sm:gap-6 mb-6">
         <div className="flex-1 min-w-0">
           <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-3">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">Rahul Kumar </h1>
-            <span className="px-3 py-1 bg-green-500/10 text-green-500 text-sm rounded-full whitespace-nowrap flex items-center gap-2">
-              <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-              Open to work
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
+              <TextScramble text="Rahul Kumar" />
+            </h1>
+            <span className="px-3 py-1 bg-white/5 border border-white/10 text-gray-300 text-sm rounded-full whitespace-nowrap flex items-center gap-2">
+              <span className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse"></span>
+              Building scalable engines
             </span>
           </div>
           
           {/* Location and Time */}
-          <div className="flex flex-wrap items-center gap-2 text-sm text-gray-400 mb-4">
-            <span className="flex items-center gap-1">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-              Bangalore, India
+          <div className="flex flex-wrap items-center gap-2 text-sm text-gray-400 mb-4 font-mono">
+            <span className="flex items-center gap-1 hover:text-white transition-colors cursor-default">
+              BLR, India
             </span>
-            <span className="text-gray-600">|</span>
-            <span className="flex items-center gap-1">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6l4 2" />
-              </svg>
-              {currentTime || '4:30:04 AM'}
+            <span className="text-gray-700">/</span>
+            <span className="flex items-center gap-1 hover:text-white transition-colors cursor-default">
+              {currentTime || '00:00:00'}
             </span>
           </div>
         </div>
-        <div className="flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48">
-          <img
-            src="/profile.png"
-            alt="Rahul Kumar Verma"
-            className="w-full h-full rounded-2xl object-cover"
-          />
+        <div className="flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 group">
+          <div className="relative w-full h-full rounded-2xl overflow-hidden ring-1 ring-white/10 group-hover:ring-white/30 transition-all duration-500">
+            <img
+              src="/profile.png"
+              alt="Rahul Kumar Verma"
+              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-110"
+            />
+          </div>
         </div>
       </div>
 
-      <div className="text-sm sm:text-base text-gray-300 leading-relaxed space-y-4 mb-6">
-        <p className="text-sm sm:text-base">
-          I'm Rahul — a <KeywordTooltip info="A software developer who builds applications, systems, and solutions using programming languages and technologies.">developer</KeywordTooltip>, product thinker, and early-stage founder mindset creator. I design <KeywordTooltip info="Products and applications that leverage artificial intelligence and machine learning to provide intelligent, automated solutions.">AI-powered products</KeywordTooltip>, automation workflows, and scalable platforms that solve real-world problems with clarity and efficiency.
+      <div className="text-sm sm:text-base text-gray-300 leading-relaxed space-y-6 mb-8">
+        <p>
+          I don't just write code; I engineer <span className="text-white font-medium">clarity</span> out of chaos. 
+          Most developers build features. I build <KeywordTooltip info="Self-sustaining software architectures that require minimal maintenance and scale efficiently.">systems</KeywordTooltip> that allow others to move faster.
         </p>
         
-        <div className="space-y-4 mt-6">
-          <div>
-            <h3 className="text-base font-semibold mb-2 text-gray-200">How I Started Building</h3>
-            <p className="text-sm sm:text-base">
-              I never began with the goal of collecting certificates or academic achievements. I began because I love <KeywordTooltip info="The process of identifying, analyzing, and finding effective solutions to complex challenges and obstacles.">solving problems</KeywordTooltip>. My curiosity for how systems work slowly turned into building things that make life easier — from <KeywordTooltip info="Tools and software that use artificial intelligence to assist in graphic design, image generation, and visual content creation.">AI design tools</KeywordTooltip> to automated news engines and large-scale analytics dashboards.
-            </p>
-          </div>
-          
-          <p className="text-sm sm:text-base">
-            I believe <KeywordTooltip info="The application of scientific knowledge for practical purposes, especially in industry and innovation.">technology</KeywordTooltip> should feel effortless. Fast. Useful. Human.
-          </p>
-          
-          <p className="text-sm sm:text-base">
-            Every project I build starts with one question:
-          </p>
-          
-          <p className="text-gray-200 font-medium italic text-sm sm:text-base">
-            "What <span className="underline decoration-gray-600 underline-offset-2">problem</span> is worth solving today?"
+        <div className="pl-4 border-l-2 border-gray-800 space-y-4">
+          <p className="italic text-gray-400">
+            "The code is not the asset. The <span className="text-gray-200 not-italic font-medium">insight</span> behind the code is the asset."
           </p>
         </div>
+
+        <p>
+          My work creates leverage. Whether it's optimizing a <KeywordTooltip info="Distributed data processing engine handling terabytes of data.">PySpark pipeline</KeywordTooltip> to process 10k+ records in seconds, or designing an <KeywordTooltip info="A minimalist, high-performance UI framework focused on user intent.">AI interface</KeywordTooltip> that feels like magic—I am obsessed with the <span className="underline decoration-gray-700 underline-offset-4 decoration-1">0.1% details</span> that majority ignore.
+        </p>
       </div>
 
-      {/* CTA Buttons */}
+      {/* CTA Buttons - High Signal */}
       <div className="flex flex-wrap gap-3 mb-6">
         <a
-          href="#experiments"
-          className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors text-sm"
+          href="#problem-library"
+          className="group flex items-center gap-2 px-5 py-2.5 bg-white text-black hover:bg-gray-200 rounded-lg transition-all font-medium text-sm"
         >
-          Explore My Work →
+          View The Case Studies
+          <span className="group-hover:translate-x-0.5 transition-transform">→</span>
         </a>
         <a
           href="mailto:raahul.inbox@gmail.com"
-          className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors text-sm"
+          className="flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 rounded-lg transition-all text-sm text-gray-200"
         >
-          Let's Build Something →
+          Work With Me
         </a>
       </div>
     </section>
