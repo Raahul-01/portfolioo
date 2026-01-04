@@ -57,9 +57,9 @@ export function ProblemLibrary() {
           <p className="text-sm uppercase tracking-[0.2em] text-gray-500 dark:text-gray-500">Selected Works</p>
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-0">
           {experiments.map((experiment, index) => (
-            <div key={experiment.title} className="group py-6 border-b border-gray-300 dark:border-gray-800/50 last:border-0">
+            <div key={experiment.title} className="group py-4 border-b border-gray-400 dark:border-gray-700 last:border-0">
               <div className="text-sm sm:text-base leading-relaxed space-y-3">
                 <div className="flex items-start justify-between gap-3 flex-wrap">
                   <div>
