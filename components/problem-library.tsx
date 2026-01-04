@@ -63,8 +63,10 @@ export function ProblemLibrary() {
               <div className="text-sm sm:text-base leading-relaxed space-y-3">
                 <div className="flex items-start justify-between gap-3 flex-wrap">
                   <div>
-                    <p className="text-gray-500 dark:text-gray-500 text-xs mb-1 font-mono">0{index + 1}</p>
-                    <p className="text-gray-900 dark:text-gray-200 font-medium group-hover:text-black dark:group-hover:text-white transition-colors">{experiment.title}</p>
+                    <p className="text-gray-900 dark:text-gray-200 font-medium group-hover:text-black dark:group-hover:text-white transition-colors">
+                      <span className="text-xs mr-2">0{index + 1}.</span>
+                      {experiment.title}
+                    </p>
                   </div>
                   <div className="flex gap-3 text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">
                     <a

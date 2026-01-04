@@ -72,7 +72,7 @@ export function TextScramble({
         Aria-hidden so screen readers ignore this garbage text.
       */}
       <span 
-        className="absolute top-0 left-0 select-none pointer-events-none" 
+        className="absolute top-0 left-0 select-none pointer-events-none whitespace-nowrap" 
         aria-hidden="true"
       >
         {displayText}
