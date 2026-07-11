@@ -29,7 +29,7 @@ export function Hero() {
     <section id="my-story" className="mb-12 sm:mb-16">
       {/* Greeting */}
       <div className="text-gray-600 dark:text-gray-400 text-sm mb-4 flex items-center gap-2">
-        <span className="text-lg">⚡</span> Engineer. Builder. Obsessive.
+        <span className="text-lg">⚡</span> Building Cuddl &amp; CouponLink. Systems thinker who ships.
       </div>
 
       <div className="flex flex-row items-start justify-between gap-4 sm:gap-6 mb-6">
@@ -53,6 +53,13 @@ export function Hero() {
             <span className="flex items-center gap-1 hover:text-black dark:hover:text-white transition-colors cursor-default">
               {currentTime || '00:00:00'}
             </span>
+          </div>
+
+          {/* Now line */}
+          <div className="pl-4 border-l-2 border-gray-300 dark:border-gray-800">
+            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+              <span className="text-gray-900 dark:text-gray-200 font-medium">Now:</span> Currently building Cuddl (1,000+ users) and CouponLink. Open to Product roles — and conversations with operators and investors who get it.
+            </p>
           </div>
         </div>
         <div className="flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 group">
@@ -96,8 +103,19 @@ export function Hero() {
           href="mailto:raahul.inbox@gmail.com"
           className="flex items-center gap-2 px-5 py-2.5 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:bg-black/10 dark:hover:bg-white/10 hover:border-black/20 dark:hover:border-white/20 rounded-lg transition-all text-sm text-gray-700 dark:text-gray-200"
         >
-          Work With Me
+          Let's Talk
         </a>
+      </div>
+
+      {/* Stat strip */}
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-mono text-gray-500 dark:text-gray-500">
+        <span className="text-gray-700 dark:text-gray-300">1,000+</span> Cuddl users
+        <span className="text-gray-400 dark:text-gray-700">·</span>
+        <span className="text-gray-700 dark:text-gray-300">500+</span> CouponLink users
+        <span className="text-gray-400 dark:text-gray-700">·</span>
+        <span className="text-gray-700 dark:text-gray-300">2</span> products shipped solo
+        <span className="text-gray-400 dark:text-gray-700">·</span>
+        <span className="text-gray-700 dark:text-gray-300">0 to 1, twice</span>
       </div>
     </section>
   )

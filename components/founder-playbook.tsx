@@ -18,6 +18,10 @@ export function FounderPlaybook() {
       title: "Distribution first",
       desc: "Building is easy. Getting people to care is hard. Bake distribution into the product DNA."
     },
+    {
+      title: "Fix the structure, not the symptom",
+      desc: "Most \"bugs\" are just the wrong system pretending to be a feature request."
+    },
   ]
 
   return (

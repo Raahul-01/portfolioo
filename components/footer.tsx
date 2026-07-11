@@ -17,7 +17,7 @@ export function Footer() {
   const socialLinks = [
     { icon: Github, href: "https://github.com/raahul-01", label: "GitHub" },
     { icon: Linkedin, href: "https://linkedin.com/in/raahul01", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+    { icon: Twitter, href: "https://x.com/xlyphh", label: "Twitter" },
     { icon: SpotifyIcon, href: "https://open.spotify.com/user/31gemj5ptslzd5jzro6jg2wk7koq?si=0fd29674e54342a4", label: "Spotify" },
     { icon: Mail, href: "mailto:raahul.inbox@gmail.com", label: "Email" },
   ]
@@ -63,7 +63,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-row flex-wrap items-center justify-between gap-4 pt-6 pb-4 text-xs sm:text-sm text-gray-500 dark:text-gray-500 border-t border-gray-200 dark:border-gray-800">
           <div className="flex items-center gap-2">
-            <span>© 2025</span>
+            <span>© 2026</span>
             <span className="text-gray-300 dark:text-gray-700">•</span>
             <span className="text-gray-900 dark:text-gray-400 font-medium sm:font-normal">Rahul Kumar Verma</span>
           </div>

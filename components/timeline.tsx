@@ -3,14 +3,13 @@ import { TextScramble } from './ui/text-scramble'
 
 export function Timeline() {
   const entries = [
-    { date: "Late 2025", description: "Projected: Predictive Health Engine (v1 Launch)" },
-    { date: "Mid 2025", description: "R&D: Graph-based Knowledge Feed using localized LLMs" },
+    { date: "Now", description: "Scaling Cuddl past 1,000+ active users with behavioral engagement mechanics — Burn, Lore, The Rivalry" },
+    { date: "2025", description: "Took CouponLink from idea to 500+ users in under 5 months — live at couponlink.in" },
+    { date: "2025", description: "Shipped Cuddl: resolved cross-OEM Android notification fragmentation (ColorOS, MIUI, OxygenOS)" },
+    { date: "2025", description: "Architected ANANTKAAL: civic-tech ranking issues by neglect, built solo end to end" },
     { date: "April 2025", description: "Deployed custom quantization for Thumbnail AI (4x cheaper inference)" },
-    { date: "Feb 2025", description: "Re-engineered segmentation pipeline with SAM-B + ONNX" },
-    { date: "Jan 2025", description: "Scaled PySpark cluster to handle 50GB+ daily student logs" },
-    { date: "Dec 2024", description: "Shipped Omnisphere: Autonomous news crawler v1.0" },
-    { date: "Oct 2024", description: "Published ML research on cardiovascular risk prediction" },
-    { date: "Early 2024", description: "Commit: 'Build one production-grade system every month'" },
+    { date: "Dec 2024", description: "Shipped Omnisphere: autonomous news crawler v1.0" },
+    { date: "Early 2024", description: "Commit: 'Ship real products, not demos' — 0 to 1, twice and counting" },
   ]
 
   return (

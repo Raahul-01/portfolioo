@@ -9,9 +9,9 @@ import { InteractiveGrid } from "@/components/ui/interactive-grid"
 import { CommandMenu } from "@/components/command-menu"
 
 export const metadata: Metadata = {
-  title: "Rahul Kumar  - Full Stack Developer",
+  title: "Rahul Kumar - Product Builder & Systems Thinker",
   description:
-    "Portfolio of Rahul Kumar Verma - Full Stack Developer specializing in React, Next.js, AI/ML, and Data Science",
+    "Portfolio of Rahul Kumar Verma - building Cuddl (1,000+ users) and CouponLink. Product builder and systems thinker who ships 0-to-1 products.",
   generator: "v0.app",
 }
 
