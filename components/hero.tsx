@@ -63,7 +63,7 @@ export function Hero() {
           </div>
         </div>
         <div className="flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 group">
-          <div className="relative w-full h-full rounded-2xl overflow-hidden ring-1 ring-black/10 dark:ring-white/10 group-hover:ring-black/30 dark:group-hover:ring-white/30 transition-all duration-500">
+          <div className="relative w-full h-full rounded-full overflow-hidden ring-1 ring-black/10 dark:ring-white/10 group-hover:ring-black/30 dark:group-hover:ring-white/30 transition-all duration-500">
             <img
               src="/profile.png"
               alt="Rahul Kumar Verma"
